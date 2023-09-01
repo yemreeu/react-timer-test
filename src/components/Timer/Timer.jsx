@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './Timer.css';
-import TimerButton from '../TimerButton/TimerButton';
+import React, { Component } from "react";
+import "./Timer.css";
+import TimerButton from "../TimerButton/TimerButton";
 
 class Timer extends Component {
   constructor(props) {
@@ -59,24 +59,27 @@ class Timer extends Component {
 
     return (
       <div className="timer-container">
-        <div className="time-display">
+        <div className="time-display" data-testid="time-display">
           {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
         </div>
         <div className="timer-button-container">
           <TimerButton
+            dataTestId="start-button"
             className="start-timer"
             buttonAction={this.startTimer}
-            buttonValue={'Start'}
+            buttonValue={"Start"}
           />
           <TimerButton
+            dataTestId="stop-button"
             className="stop-timer"
             buttonAction={this.stopTimer}
-            buttonValue={'Stop'}
+            buttonValue={"Stop"}
           />
           <TimerButton
+            dataTestId="reset-button"
             className="reset-timer"
             buttonAction={this.resetTimer}
-            buttonValue={'Reset'}
+            buttonValue={"Reset"}
           />
         </div>
       </div>
