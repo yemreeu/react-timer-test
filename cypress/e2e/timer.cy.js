@@ -5,7 +5,13 @@ import Timer from "../PageObjects/TimerPage.js";
 describe("Timer App", () => {
   beforeEach(() => {
     cy.visit("/");
-    
+  });
+
+  // For taking screenshot when test failures
+  afterEach(function () {
+    if (this.currentTest.state === 'failed') {
+      cy.screenshot();
+    }
   });
 
   const tm = new Timer();
